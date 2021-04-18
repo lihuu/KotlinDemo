@@ -14,7 +14,6 @@ class BaseImpl(val x: Int) : Base {
         print(x)
     }
 }
-
 class Derived(b: Base) : Base by b
 
 //
