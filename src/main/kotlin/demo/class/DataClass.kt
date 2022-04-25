@@ -10,3 +10,14 @@ object Resource {
         println("Hello")
     }
 }
+
+class Singleton{
+    companion object Instance{
+        
+    }
+    
+}
+
+fun main() {
+    Singleton.Instance
+}

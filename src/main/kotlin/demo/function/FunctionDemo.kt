@@ -71,5 +71,7 @@ fun main(args: Array<String>) {
 
     val list = asList(1, 2, 3)
     println(list)
+    val name = "Hello.java"
+    println(name.subSequence(0, name.indexOf(".")))
 
 }
