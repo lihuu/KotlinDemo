@@ -54,7 +54,7 @@ fun arrayOfMinusOnes(size: Int): IntArray {
 
 //这个是Kotlin的main函数
 //args可以省略
-fun main(args: Array<String>) {
+fun main() {
     println(sum(1, 2))
     printNumber()
     printNumber(2)
