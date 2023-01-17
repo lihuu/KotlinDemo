@@ -74,13 +74,14 @@
     </build>
 
     <dependencies>
-        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit -->
+        <!-- https://mvnrepository.com/artifact/org.jetbrains.kotlin/kotlin-test-junit5 -->
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
-            <artifactId>kotlin-test-junit</artifactId>
+            <artifactId>kotlin-test-junit5</artifactId>
             <version>1.8.0</version>
             <scope>test</scope>
         </dependency>
+
 
 
         <dependency>
