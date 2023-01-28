@@ -12,4 +12,18 @@ class FirstTest {
         val str = "String"
         assert("String" == str)
     }
+    
+    @Test
+    fun testCompanionObject(){
+        val hello = MyClass.hello("lihu")
+        assert(hello=="Hello,lihu")
+    }
+}
+
+class MyClass{
+    companion object {
+        fun hello(name: String):String{
+            return "Hello,$name";
+        }
+    }
 }
