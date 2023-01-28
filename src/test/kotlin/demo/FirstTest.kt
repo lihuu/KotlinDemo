@@ -8,34 +8,34 @@ import kotlin.test.Test
  */
 class FirstTest {
     @Test
-    fun testFist(){
+    fun testFist() {
         val str = "String"
         assert("String" == str)
     }
-    
+
     @Test
-    fun testCompanionObject(){
+    fun testCompanionObject() {
         //相当于MyClass.Companion.hello()
         val hello = MyClass.hello("lihu")
-        assert(hello=="Hello,lihu")
+        assert(hello == "Hello,lihu")
     }
-    
+
     @Test
-    fun testObject(){
+    fun testObject() {
         val hello = MyClass.obj.hello("lihu")
-        assert(hello=="Hello,lihu")
+        assert(hello == "Hello,lihu")
     }
 }
 
-class MyClass{
+class MyClass {
     companion object {
-        fun hello(name: String):String{
+        fun hello(name: String): String {
             return "Hello,$name";
         }
     }
-    
+
     object obj {
-        fun hello(name: String):String{
+        fun hello(name: String): String {
             return "Hello,$name";
         }
     }
