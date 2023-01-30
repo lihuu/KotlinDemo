@@ -44,6 +44,9 @@ object DataProviderManager {
 }
 
 class MouseEvent {
+    companion object {
+        const val eventName = "mouseEvent"
+    }
 
 }
 
@@ -70,4 +73,5 @@ object DefaultListener : MouseAdapter() {
 fun main() {
     foo()
     DataProviderManager.registerDataProvider(DataProvider("foo"))
+    println(MouseEvent.eventName)
 }
