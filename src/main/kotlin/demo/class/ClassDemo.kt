@@ -62,6 +62,13 @@ class User constructor(private val id: Int, private val name: String) {
 
 }
 
+
+class PersonInfo(val name: String, private val age: Int) {
+    val isAdult: Boolean
+        get() = age > 18
+
+}
+
 fun main() {
     val user = User(1, "lihu")
     User(1, "lihu", 18)
