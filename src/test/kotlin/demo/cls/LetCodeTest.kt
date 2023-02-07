@@ -23,23 +23,14 @@ class LetCodeTest {
      */
 
     private fun removeElement(list: Array<Int>, target: Int): Int {
+        var s = 0
         val size = list.size
-        var equalIndex: Int? = null
-        for (i in 0 until size) {
-            if (equalIndex != null) {
-                val temp = list[i]
-                list[equalIndex] = list[i]
-                list[i] = temp;
-                equalIndex = i;
-            }
-            if (list[i] == target) {
-                equalIndex = i;
+        for (f in 0 until size) {
+            if (list[f] != target) {
+                list[s++] = list[f]
             }
         }
-        if (equalIndex != null) {
-            return equalIndex - 1;
-        }
-        return size;
+        return s
     }
 
     @Test
