@@ -39,6 +39,7 @@ dependencies {
     testImplementation(kotlin("test"))
     testImplementation(kotlin("reflect"))
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks.test {
