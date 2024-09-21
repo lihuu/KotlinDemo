@@ -6,8 +6,19 @@ package demo.utils
  */
 class LogUtils {
     companion object {
-        fun log(message: String){
+        fun log(message: String) {
             println(message)
+        }
+
+        fun logM(message: String) {
+            println(
+                """
+                =====================================
+                $message
+                Thread: ${Thread.currentThread().name}
+                =====================================
+                """.trimIndent()
+            )
         }
     }
 }

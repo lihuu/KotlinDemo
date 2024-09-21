@@ -4,6 +4,8 @@
 
 package demo.function
 
+import demo.`class`.User
+
 //Kotlin的函数
 fun sum(a: Int, b: Int): Int {
     return a + b
@@ -52,6 +54,18 @@ fun arrayOfMinusOnes(size: Int): IntArray {
     return IntArray(size).apply { fill(-1) }
 }
 
+class View{
+   fun setClickListener(listener: (View) -> Unit) {
+       listener(this)
+   }
+
+    fun onClick(listener: ClickListener){}
+}
+
+
+
+
+
 //这个是Kotlin的main函数
 //args可以省略
 fun main() {
@@ -74,4 +88,72 @@ fun main() {
     val name = "Hello.java"
     println(name.subSequence(0, name.indexOf(".")))
 
+    val view = View()
+    view.setClickListener { v ->
+        println("View clicked")
+    }
+
+    // 通过object对象的方式
+    view.onClick(object : ClickListener{
+        override fun onClick(view: View) {
+            println("View clicked")
+        }
+    })
+
+    // 函数式接口，object可以省略
+    view.onClick(ClickListener{view->
+        println("View clicked")
+    })
+
+    // 函数式接口，可以转换为lambda，直接省略ClickListener
+    view.onClick({view->
+        println("View clicked")
+    })
+
+    // Lambda 只有一个参数的时候，可以使用it替代
+    view.onClick({it->
+        println("View clicked")
+    })
+
+    // Lambda 只有一个参数的时候，可以使用it替代，可以省略参数
+    view.onClick({
+        println("$it")
+    })
+
+    // Lambda 作为函数的最后一个参数的时候，大括号可以移到外面
+    view.onClick(){
+        println("$it")
+    }
+
+    // Lambda 作为函数的最后一个参数的时候，大括号可以移到外面，如果只有一个参数的可以省略括号
+    view.onClick {
+        println("$it")
+    }
+
+
 }
+
+// 类似于java的FunctionalInterface
+fun interface ClickListener {
+    fun onClick(view: View)
+}
+
+
+
+fun test(view: View?) {
+    view?.apply {
+        setClickListener { v ->
+            println("View clicked")
+        }
+    }
+
+    view?.myApply{
+        println("View clicked")
+    }
+}
+
+fun View.myApply(block: View.()->Unit): View{
+    block()
+    return this
+}
+

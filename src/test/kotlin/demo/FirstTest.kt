@@ -1,6 +1,5 @@
 package demo
 
-import demo.`class`.MyClass
 import kotlin.test.Test
 
 /**
